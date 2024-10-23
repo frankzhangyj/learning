@@ -1,0 +1,10 @@
+server:
+  port: 80
+  servlet:
+    context-path: /app
+
+spring:
+  web:
+    resources:
+      # 配置静态资源地址,如果设置,会覆盖默认值 static public resources WEB-META/resources
+      static-locations: classpath:/webapp

@@ -1,0 +1,9 @@
+user:
+  username:
+  password:
+  gls:
+    - haha
+    - jjiji
+spring:
+  profiles:
+    active: test, dev

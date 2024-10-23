@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+    <filter>
+        <filter-name>loggingFilter</filter-name>
+        <filter-class>com.microsoft.filters.LoggingFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>loggingFilter</filter-name>
+        <!--通过映射路径确定过滤资源-->
+        <url-pattern>/serletA</url-pattern>
+        <!--通过后缀名确定过滤资源-->
+        <url-pattern>*.html</url-pattern>
+        <!--通过servlet别名确定过滤资源-->
+        <servlet-name>servletB</servlet-name>
+    </filter-mapping>
+</web-app>

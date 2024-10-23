@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="dept" class="com.microsoft.spring5.autoWire.Dept"></bean>
+
+    <!--根据类型匹配IOC容器中的某个兼容类型的bean，为属性自动赋值 不能有多个相同id的bean-->
+    <bean id="empt" class="com.microsoft.spring5.autoWire.Emp" autowire="byType"></bean>
+
+    <!--将自动装配的属性的属性名，作为bean的id在IOC容器中匹配相对应的bean进行赋值-->
+    <!--<bean id="empt" class="com.microsoft.spring5.autoWire.Emp" autowire="byName"></bean>-->
+</beans>

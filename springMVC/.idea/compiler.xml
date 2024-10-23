@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="demo03_transParam" />
+        <module name="demo02_loadBean" />
+        <module name="demo04_restful" />
+        <module name="demo05_interceptor" />
+        <module name="springMVC_demo01" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

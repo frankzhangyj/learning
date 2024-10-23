@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties resource=""></properties>
+
+    <settings>
+        <!-- 开启驼峰式映射-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!-- 开启logback日志输出-->
+        <setting name="logImpl" value="SLF4J"/>
+        <!--开启resultMap自动映射 -->
+        <setting name="autoMappingBehavior" value="FULL"/>
+    </settings>
+
+    <typeAliases>
+        <package name="com.microsoft.ssm.pojo"/>
+    </typeAliases>
+
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <property name="helperDialect" value="mysql"/>
+        </plugin>
+    </plugins>
+
+</configuration>

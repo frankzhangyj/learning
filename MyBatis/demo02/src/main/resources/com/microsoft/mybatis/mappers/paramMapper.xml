@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.microsoft.mybatis.mappers.ParamMapper">
+    <!--public User findUser(int id);-->
+    <select id="findUser" resultType="User">
+        select * from t_user where id = #{id}
+    </select>
+
+    <!--public User checkLogin(@Param("id") int id,@Param("password") String password);-->
+    <select id="checkLogin" resultType="User">
+        select * from t_user where id = #{id} and password = #{password}
+    </select>
+
+    <!--public void insertUser(User user);-->
+    <select id="insertUser">
+        insert into t_user values(null,#{username},#{password},#{age},#{sex},#{email})
+    </select>
+
+    <!--User checkLoginByMap(Map<String, Object> map);-->
+    <select id="checkLoginByMap" resultType="user">
+        select * from t_user where username = #{username} and password = #{password}
+    </select>
+
+
+</mapper>

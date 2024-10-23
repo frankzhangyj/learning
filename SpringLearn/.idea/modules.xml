@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SpringLearn.iml" filepath="$PROJECT_DIR$/SpringLearn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo01_beanManage/demo01_beanManage.iml" filepath="$PROJECT_DIR$/demo01_beanManage/demo01_beanManage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo02_beanAnnotation/demo02_beanAnnotation.iml" filepath="$PROJECT_DIR$/demo02_beanAnnotation/demo02_beanAnnotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo03_AOP/demo03_AOP.iml" filepath="$PROJECT_DIR$/demo03_AOP/demo03_AOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo04_jdbcTemplate/demo04_jdbcTemplate.iml" filepath="$PROJECT_DIR$/demo04_jdbcTemplate/demo04_jdbcTemplate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo05_transaction/demo05_transaction.iml" filepath="$PROJECT_DIR$/demo05_transaction/demo05_transaction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo06_spring/demo06_spring.iml" filepath="$PROJECT_DIR$/demo06_spring/demo06_spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo06_spring5/demo06_spring5.iml" filepath="$PROJECT_DIR$/demo06_spring5/demo06_spring5.iml" />
+    </modules>
+  </component>
+</project>

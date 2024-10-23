@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                          http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+    <bean id="col" class="com.microsoft.spring5.CollectionBean">
+        <!--数组注入-->
+        <property name="array">
+            <array>
+                <value>Sing</value>
+                <value>Dance</value>
+                <value>Rap</value>
+            </array>
+        </property>
+
+        <!--list注入-->
+        <property name="list">
+            <list>
+                <value>aaa</value>
+                <value>bbb</value>
+                <value>ccc</value>
+            </list>
+        </property>
+
+        <!--map注入-->
+        <property name="map">
+            <map>
+                <entry key="k1" value="v1"></entry>
+                <entry key="k2" value="v2"></entry>
+                <entry key="k3" value="v3"></entry>
+            </map>
+        </property>
+
+        <!--set注入-->
+        <property name="set">
+            <set>
+                <value>s1</value>
+                <value>s2</value>
+                <value>s3</value>
+            </set>
+        </property>
+
+        <!--对象类型集合注入-->
+        <property name="userList">
+            <list>
+                <ref bean="user1"></ref>
+                <ref bean="user2"></ref>
+            </list>
+        </property>
+
+        <property name="userList2" ref="list">
+
+        </property>
+    </bean>
+
+    <bean id="user1" class="com.microsoft.spring5.User">
+        <property name="username" value="jack"></property>
+    </bean>
+    <bean id="user2" class="com.microsoft.spring5.User">
+        <property name="username" value="frank"></property>
+    </bean>
+
+    <!--将集合提取共用-->
+    <util:list id="list">
+        <ref bean="user2"></ref>
+        <ref bean="user1"></ref>
+    </util:list>
+
+
+
+</beans>

@@ -1,0 +1,11 @@
+com\microsoft\springMVC\controller\UserController2.class
+com\microsoft\springMVC\config\SpringMVCConfig.class
+com\microsoft\springMVC\service\serviceImpl\UserServiceImpl.class
+com\microsoft\springMVC\config\SpringConfig.class
+com\microsoft\springMVC\dao\UserDao.class
+com\microsoft\springMVC\service\UserService.class
+com\microsoft\springMVC\config\ServletContainerInitConfig.class
+com\microsoft\springMVC\controller\UserController2$UserController.class
+com\microsoft\springMVC\pojo\User.class
+com\microsoft\springMVC\controller\UserController.class
+com\microsoft\springMVC\pojo\Address.class

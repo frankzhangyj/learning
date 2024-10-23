@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="lifeCircle" class="com.microsoft.spring5.lifeCircle.LifeCircle" init-method="initMethod"
+          destroy-method="destroyMethod">
+        <property name="name" value="frank"></property>
+    </bean>
+
+    <!--配置后置处理器-->
+    <bean id="post" class="com.microsoft.spring5.lifeCircle.MyBeanPost"></bean>
+</beans>

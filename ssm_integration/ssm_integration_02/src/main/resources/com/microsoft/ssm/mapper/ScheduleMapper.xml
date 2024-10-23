@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.microsoft.ssm.mapper.ScheduleMapper">
+
+    <select id="queryPage" resultType="schedule">
+        select * from schedule
+    </select>
+
+    <!--void insert(Schedule schedule);-->
+    <insert id="insert">
+        insert into schedule (title, completed) values (${title}, ${completed})
+    </insert>
+
+    <!--void delete(Integer id);-->
+    <delete id="delete">
+        delete from schedule where id=#{id}
+    </delete>
+
+    <!--int update(Schedule schedule);-->
+    <update id="update">
+        update schedule set id = #{id}, title = #{title}, completed = #{completed} where id = #{id}
+    </update>
+</mapper>

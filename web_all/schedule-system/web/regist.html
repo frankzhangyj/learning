@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .ht {
+            text-align: center;
+            color: cadetblue;
+            font-family: 幼圆;
+        }
+
+        .tab {
+            width: 500px;
+            border: 5px solid cadetblue;
+            margin: 0px auto;
+            border-radius: 5px;
+            font-family: 幼圆;
+        }
+
+        .ltr td {
+            border: 1px solid powderblue;
+
+        }
+
+        .ipt {
+            border: 0px;
+            width: 50%;
+
+        }
+
+        .btn1 {
+            border: 2px solid powderblue;
+            border-radius: 4px;
+            width: 60px;
+            background-color: antiquewhite;
+
+        }
+
+        .msg {
+            color: gold;
+        }
+
+        .buttonContainer {
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function checkUsername() {
+            var usernameReg = /^[a-zA-Z0-9]{5,10}$/
+            var usernameInput = document.getElementById("usernameInput")
+            var value = usernameInput.value
+            var usernameMsg = document.getElementById("usernameMsg")
+            if (!usernameReg.test(value)) {
+                usernameMsg.innerText = "error"
+                return false
+            }
+            // 原生js代码实现 ajax 异步请求
+            var request = new XMLHttpRequest()
+            // 设置回调函数 readyState 共有4个状态 最后一个状态4 代表后端响应回前端
+            request.onreadystatechange = function () {
+                if (request.readyState == 4 && request.status == 200) {
+                    var response = JSON.parse(request.responseText)
+                    console.log(response)
+                    if (response.code != 200) {
+                        usernameMsg.innerText = "已占用"
+                    }
+                    // 将成功响应的数据显示到前端
+                }
+            }
+            // 设置数据发送的方式与路径
+            request.open("GET", "/user/checkUserName?username=" + value)
+            // 数据发送
+            request.send()
+
+            usernameMsg.innerText="可用"
+        }
+
+
+        function checkUserPwd() {
+            var userpswReg = /^[0-9]{6}$/;
+            var userPwdInput = document.getElementById("userPwdInput");
+            var value = userPwdInput.value;
+            var userPwdMsg = document.getElementById("userPwdMsg");
+            if (!userpswReg.test(value)) {
+                userPwdMsg.innerText = "error";
+                return false;
+            }
+            userPwdMsg.innerText = "OK"
+            return true
+        }
+
+        function checkReUserPwd() {
+            var userpswReg = /^[0-9]{6}$/;
+            var userPwdInput = document.getElementById("userPwdInput");
+            var value = userPwdInput.value;
+            var reUserPwdInput = document.getElementById("reUserPwdInput")
+            var reValue = reUserPwdInput.value
+            var reUserPwdMsg = document.getElementById("reUserPwdMsg")
+            var reValue = reUserPwdInput.value
+            if (!(userpswReg.test(reValue))) {
+                reUserPwdMsg.innerText = "error";
+                return false;
+            }
+            if (value != reValue) {
+                reUserPwdMsg.innerText = "密码不一致"
+                return false;
+            }
+            reUserPwdMsg.innerText = "OK"
+            return true
+        }
+
+        function checkForm() {
+            var fl1 = checkUsername()
+            var fl2 = checkUserPwd()
+            var fl3 = checkReUserPwd()
+
+            return fl1 && fl2 && fl3
+        }
+    </script>
+
+
+</head>
+<body>
+<h1 class="ht">欢迎使用日程管理系统</h1>
+<h3 class="ht">请注册</h3>
+<form method="post" action="/user/regist" onsubmit="return checkForm()">
+    <table class="tab" cellspacing="0px">
+        <tr class="ltr">
+            <td>请输入账号</td>
+            <td>
+                <input class="ipt" id="usernameInput" type="text" name="username" onblur="checkUsername()">
+                <span id="usernameMsg" class="msg"></span>
+            </td>
+        </tr>
+        <tr class="ltr">
+            <td>请输入密码</td>
+            <td>
+                <input class="ipt" id="userPwdInput" type="password" name="password" onblur="checkUserPwd()">
+                <span id="userPwdMsg" class="msg"></span>
+            </td>
+        </tr>
+        <tr class="ltr">
+            <td>确认密码</td>
+            <td>
+                <input class="ipt" id="reUserPwdInput" type="password" onblur="checkReUserPwd()">
+                <span id="reUserPwdMsg" class="msg"></span>
+            </td>
+        </tr>
+        <tr class="ltr">
+            <td colspan="2" class="buttonContainer">
+                <input class="btn1" type="submit" value="注册">
+                <input class="btn1" type="reset" value="重置">
+                <button class="btn1"><a href="login.html">去登录</a></button>
+            </td>
+        </tr>
+    </table>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+    <servlet>
+        <servlet-name>userServlet</servlet-name>
+        <servlet-class>com.microsoft.UserServlet</servlet-class>
+        <!-- 设置参数可以使得servlet在tomcat服务器启动时初始化 默认值-1 在启动后初始化 -->
+        <load-on-startup>6</load-on-startup> <!-- 最好是5以后 因为tomcat中已经占用了前5-->
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userServlet</servlet-name>
+        <url-pattern>/action/*</url-pattern>
+    </servlet-mapping>
+</web-app>

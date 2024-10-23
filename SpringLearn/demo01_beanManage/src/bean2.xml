@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--外部bean注入-->
+    <bean id="outer" class="com.microsoft.spring5.Outer">
+        <property name="oName" value="out name"></property>
+        <property name="inner" ref="inner"></property>
+    </bean>
+    <bean id="inner" class="com.microsoft.spring5.Inner">
+        <property name="iName" value="inner name"></property>
+    </bean>
+
+    <!--内部bean注入-->
+    <bean id="outer1" class="com.microsoft.spring5.Outer1">
+        <property name="oName" value="outer1 name"></property>
+        <property name="inner">
+            <bean class="com.microsoft.spring5.Inner1">
+                <property name="iName" value="inner1 name"></property>
+            </bean>
+        </property>
+    </bean>
+
+    <!--级联属性注入 需要先得到inner对象-->
+    <bean id="outer2" class="com.microsoft.spring5.Outer2">
+        <property name="oName" value="out name"></property>
+        <property name="inner" ref="inner2"></property>
+        <property name="inner.iName" value="new inner name"></property>
+    </bean>
+    <bean id="inner2" class="com.microsoft.spring5.Inner2">
+        <property name="iName" value="inner name"></property>
+    </bean>
+
+
+</beans>
